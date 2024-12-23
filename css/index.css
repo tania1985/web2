@@ -35,6 +35,10 @@ nav ul li a {
     text-decoration: none;
 }
 
+.section1 img {
+    width: 100%;
+    height: 100%;
+}
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {
