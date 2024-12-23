@@ -37,14 +37,14 @@ nav ul li a {
 
 }
 
-.seccion1 {
+.section1 {
     position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.seccion1::before {
+.section1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -63,8 +63,8 @@ nav ul li a {
 
 
 /* Estilo para h3 dentro de .section1 */
-.seccion1 h3 {
-    font-size: 100px;
+.section1 h3 {
+    font-size: 50px;
     position: relative;
     z-index: 2;
     /* Asegurarse de que el texto se muestre sobre el fondo */
