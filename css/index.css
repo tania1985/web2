@@ -61,7 +61,7 @@ nav ul li a:hover {
 }
 
 /* Estilos para las secciones */
-.section1, .section2, .section3 {
+.section1, .section2, .section3, .section4 {
     position: relative;
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@ nav ul li a:hover {
     color: white;
 }
 
-.section1::before, .section2::before, .section3::before {
+.section1::before, .section2::before, .section3::before, .section4::before {
     content: "";
     position: absolute;
     top: 0;
@@ -99,6 +99,10 @@ nav ul li a:hover {
     background-image: url("../img/Aprende-js.jpg");
 }
 
+/* Fondo de la seccion 4 */
+.section4::before {
+    background-image: url("../img/APRENDE-PHP.jpg");
+}
 /* Estilos para los encabezados h3 */
 h3 {
     font-size: 6rem;
@@ -124,12 +128,12 @@ h3 {
         margin: 0 1rem;
     }
 
-    .section1 h3, .section2 h3, .section3 h3 {
+    .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
         font-size: 3rem; /* Reducir tamaño de texto en dispositivos pequeños */
         text-align: center;
     }
 
-    .section1, .section2, .section3 {
+    .section1, .section2, .section3, .section4 {
         padding: 3rem 1rem; /* Menos relleno en pantallas pequeñas */
     }
 
