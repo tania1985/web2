@@ -39,12 +39,9 @@ nav ul li a {
     background-image: url("../img/aprender-html.png");
     background-size: cover;
     background-position: center;
-}
-
-.section1 h3 {
-    text-align: center;
-    justify-content: center;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* Media queries para pantallas pequeñas */
