@@ -1,40 +1,49 @@
-*{
+* {
     border: 1px solid black;
 }
+
 header {
     height: 100px;
     display: flex;
     justify-content: space-between;
 }
+
 nav {
     height: 50px;
 }
-section{
+
+section {
     height: 500px;
 }
-footer{
+
+footer {
     height: 100px;
 }
-nav ul{
+
+nav ul {
     display: flex;
     justify-content: right;
     list-style-type: none;
 }
-nav ul li{
+
+nav ul li {
     margin-right: 20px;
     font-size: 20px;
+
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
+
 }
 
 .seccion1 {
     position: relative;
-    display: flex; 
+    display: flex;
     justify-content: space-around;
     align-items: center;
 }
-    
+
 .seccion1::before {
     content: "";
     position: absolute;
@@ -45,19 +54,43 @@ nav ul li a{
     background-image: url("../img/aprender-html.png");
     background-size: cover;
     background-position: center;
-    opacity: 0.5; /* Ajusta el valor de opacidad según tus necesidades */
-    z-index: -1; /* Coloca la imagen detrás del contenido */
+    opacity: 0.5;
+    /* Ajusta el valor de opacidad según tus necesidades */
+    z-index: -1;
+    /* Coloca la imagen detrás del contenido */
 }
-    
 
-/* Media queries para hacer la web responsive */
-@media (max-width: 768px) {    header h1{
+
+
+/* Estilo para h3 dentro de .section1 */
+.seccion1 h3 {
+    font-size: 100px;
+    position: relative;
+    z-index: 2;
+    /* Asegurarse de que el texto se muestre sobre el fondo */
+}
+
+
+
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    header h1 {
         display: none;
     }
-    header{
+
+    header {
         justify-content: space-around;
     }
+
     nav ul {
         justify-content: center;
     }
+    .seccion1 h3 {
+        font-size: 40px;
+        position: relative;
+        z-index: 2;
+        /* Asegurarse de que el texto se muestre sobre el fondo */
+    }
+
 }
