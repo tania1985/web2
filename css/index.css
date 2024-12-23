@@ -84,9 +84,6 @@ nav ul li a {
     /* Asegurarse de que el texto se muestre sobre el fondo */
 }
 
-
-
-
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {
