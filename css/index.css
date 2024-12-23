@@ -35,9 +35,8 @@ nav ul li a {
     text-decoration: none;
 }
 
-.section1 img {
-    width: 100%;
-    height: 100%;
+.section1 {
+    background-image: url(../img/aprender-html.png);
 }
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
