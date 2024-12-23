@@ -36,8 +36,11 @@ nav ul li a {
 }
 
 .section1 {
-    background-image: url(../img/aprender-html.png);
+    background-image: url("../img/aprender-html.png");
+    background-size: cover;
+    background-position: center;
 }
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {
