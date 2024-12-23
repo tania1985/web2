@@ -41,6 +41,11 @@ nav ul li a {
     background-position: center;
 }
 
+.section1 h3 {
+    text-align: center;
+    justify-content: right;
+}
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {
