@@ -43,7 +43,8 @@ nav ul li a {
 
 .section1 h3 {
     text-align: center;
-    justify-content: right;
+    justify-content: center;
+    display: flex;
 }
 
 /* Media queries para pantallas pequeñas */
