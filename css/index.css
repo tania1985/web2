@@ -37,7 +37,7 @@ nav ul li a {
 
 }
 
-.section1 {
+.section1,.section2 {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -60,23 +60,6 @@ nav ul li a {
     /* Coloca la imagen detrás del contenido */
 }
 
-
-
-/* Estilo para h3 dentro de .section1 */
-.section1 h3 {
-    font-size: 50px;
-    position: relative;
-    z-index: 2;
-    /* Asegurarse de que el texto se muestre sobre el fondo */
-}
-
-.section2 {
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .section2::before {
     content: "";
     position: absolute;
@@ -93,15 +76,16 @@ nav ul li a {
     /* Coloca la imagen detrás del contenido */
 }
 
-
-
 /* Estilo para h3 dentro de .section1 */
-.section2 h3 {
-    font-size: 50px;
+.section1 h3,.section2 h3 {
+    font-size: 100px;
     position: relative;
     z-index: 2;
     /* Asegurarse de que el texto se muestre sobre el fondo */
 }
+
+
+
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -116,7 +100,7 @@ nav ul li a {
     nav ul {
         justify-content: center;
     }
-    .seccion1 h3 {
+    .section1 h3,.section2 h3 {
         font-size: 40px;
         position: relative;
         z-index: 2;
