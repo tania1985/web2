@@ -1,5 +1,5 @@
 body>div {
-    width: 30%;
+    width: 90%;
     margin: 0 auto;
     text-align: center;
 }
@@ -12,10 +12,12 @@ body {
 
 form {
     border: 1px solid blue;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     font-size: 30px;
     align-items: center;
+    padding: 10px;
 }
 
 input {
@@ -26,4 +28,13 @@ input {
 button {
     font-size: 25px;
     margin: 20px;
+    padding: 10px;
+    width: 82%;
+    background-color: lightgreen;
+}
+
+@media (max-width:768px) {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
 }
