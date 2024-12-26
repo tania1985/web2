@@ -1,4 +1,4 @@
-/* Reset global */
+/* Establecer un borde para todos los elementos (puedes eliminar esta línea si no es necesario) */
 * {
     margin: 0;
     padding: 0;
@@ -8,69 +8,72 @@
 /* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333; /* Color de texto principal */
 }
 
+/* Estilo para el header */
 header {
-    height: 6rem;
+    background-color: #2C3E50; /* Azul oscuro */
+    color: white;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-    background-color: #333;
-    color: white;
+    padding: 0 20px;
 }
 
-nav {
-    height: 3rem;
-    background-color: #444;
-}
-
-section {
-    padding: 3rem 2rem;
-}
-
-footer {
-    height: 4rem;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    line-height: 4rem;
-}
-
-/* Menú de navegación */
+/* Estilos de la barra de navegación */
 nav ul {
     display: flex;
-    justify-content: flex-end;
     list-style-type: none;
-    margin-right: 2rem;
 }
 
 nav ul li {
-    margin-right: 1.5rem;
-    font-size: 1.25rem;
+    margin-left: 20px;
+    font-size: 18px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #f39c12; /* Hover color */
+    color: #E74C3C; /* Rojo brillante */
+    text-decoration: underline;
 }
 
-/* Estilos para las secciones */
-.section1, .section2, .section3, .section4 {
+/* Secciones con fondo */
+section {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 5rem 0;
-    color: white;
+    padding: 2rem;
+    min-height: 500px; /* Garantiza que las secciones sean lo suficientemente altas */
+    background-color: #EAEAEA;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Sección 1 */
+.section1 {
+    background-color: #F9E79F; /* Amarillo suave */
+}
+
+.section2 {
+    background-color: #D5DBDB; /* Gris suave */
+}
+
+.section3 {
+    background-color: #A3E4D7; /* Verde menta claro */
+}
+
+.section4 {
+    background-color: #FAD7A0; /* Naranja claro */
+}
+
+/* Imágenes de fondo */
 .section1::before, .section2::before, .section3::before, .section4::before {
     content: "";
     position: absolute;
@@ -80,64 +83,141 @@ nav ul li a:hover {
     height: 100%;
     background-size: cover;
     background-position: center;
+    opacity: 0.5;
     z-index: -1;
-    filter: brightness(50%); /* Oscurece la imagen para mejorar la visibilidad del texto */
 }
 
-/* Fondo de la sección 1 */
+/* Imágenes específicas de cada sección */
 .section1::before {
     background-image: url("../img/aprender-html.png");
 }
 
-/* Fondo de la sección 2 */
 .section2::before {
     background-image: url("../img/aprende-css.png");
 }
 
-/* Fondo de la seccion 3 */
 .section3::before {
     background-image: url("../img/Aprende-js.jpg");
 }
 
-/* Fondo de la seccion 4 */
 .section4::before {
     background-image: url("../img/APRENDE-PHP.jpg");
 }
-/* Estilos para los encabezados h3 */
-h3 {
-    font-size: 6rem;
-    font-weight: bold;
-    z-index: 1;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+/* Estilo para los encabezados h3 dentro de cada sección */
+.section1 h3, .section2 h3, .section3 h3, .section4 h3 {
+    font-size: 60px;
+    color: #2C3E50; /* Azul oscuro */
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
 }
 
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
+/* Estilo para los párrafos */
+section p {
+    display: none;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: rgba(44, 62, 80, 0.7); /* Fondo oscuro semitransparente */
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Mostrar el párrafo cuando se pasa el ratón sobre el encabezado (h3) */
+section h3:hover + p {
+    display: block;
+}
+
+/* Animación para el párrafo */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #2C3E50; /* Azul oscuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+footer a {
+    color: #E74C3C; /* Rojo brillante */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries para pantallas grandes (tabletas o computadoras de escritorio) */
+@media (max-width: 1024px) {
     header {
-        flex-direction: column;
-        height: auto;
-        padding: 1.5rem;
+        justify-content: space-between;
     }
 
     nav ul {
         justify-content: center;
-        margin: 0;
     }
 
     nav ul li {
-        margin: 0 1rem;
+        font-size: 16px;
+        margin-left: 15px;
     }
 
+    /* Ajustar el tamaño de los encabezados en pantallas medianas */
     .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
-        font-size: 3rem; /* Reducir tamaño de texto en dispositivos pequeños */
-        text-align: center;
+        font-size: 50px;
     }
 
+    /* Ajustar el tamaño de los párrafos */
+    section p {
+        font-size: 16px;
+    }
+}
+
+/* Media queries para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    header {
+        height: 80px;
+        flex-direction: column; /* Cambiar la disposición en pantallas pequeñas */
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    /* Reducir el tamaño del texto de los encabezados */
+    .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
+        font-size: 40px;
+    }
+
+    /* Ajustar el tamaño de los párrafos */
+    section p {
+        font-size: 14px;
+    }
+
+    /* Mejorar la visibilidad en dispositivos móviles */
     .section1, .section2, .section3, .section4 {
-        padding: 3rem 1rem; /* Menos relleno en pantallas pequeñas */
-    }
-
-    footer {
-        font-size: 1rem;
+        padding: 1rem;
     }
 }
