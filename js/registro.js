@@ -2,7 +2,19 @@ var inputPass=document.getElementById("password");
 var inputRePass=document.getElementById("confirm-password");
 var btnCrear=document.getElementById("btnCrear");
 
-inputPass.onchange=function(){
+inputPass.oninput=validacionInput;
+inputRePass.oninput=validacionInput; 
+
+inputPass.oninput=validacionInput;
+inputRePass.oninput=validacionInput;
+
+function validacionInput(){
     var txtPass=inputPass.value;
-    console.log(txtPass);
+    var txtRePass=inputRePass.value;
+    if(txtPass==txtRePass){
+        btnCrear.disabled=false;
+    }else{
+        btnCrear.disabled=true;
+    }
+    //console.log(txtPass);
 }
