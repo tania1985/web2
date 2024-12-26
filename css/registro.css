@@ -95,6 +95,11 @@ h2 {
     text-decoration: underline;
 }
 
+#msg {
+    font-size: 20px;
+    color: red;
+    display: none;
+}
 
 @media (max-width: 768px) {
     /* Contenedor principal */
