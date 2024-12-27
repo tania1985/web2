@@ -1,223 +1,154 @@
-/* Establecer un borde para todos los elementos (puedes eliminar esta línea si no es necesario) */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    border: 1px solid black;
 }
 
-/* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #333; /* Color de texto principal */
-}
-
-/* Estilo para el header */
 header {
-    background-color: #2C3E50; /* Azul oscuro */
-    color: white;
     height: 100px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
 }
 
-/* Estilos de la barra de navegación */
+nav {
+    height: 50px;
+}
+
+section {
+    height: 500px;
+}
+
+footer {
+    height: 100px;
+}
+
 nav ul {
     display: flex;
+    justify-content: right;
     list-style-type: none;
 }
 
 nav ul li {
-    margin-left: 20px;
-    font-size: 18px;
+    margin-right: 20px;
+    font-size: 20px;
+
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+
 }
 
-nav ul li a:hover {
-    color: #E74C3C; /* Rojo brillante */
-    text-decoration: underline;
-}
-
-/* Secciones con fondo */
-section {
+.section1, .section2, .section3, .section4 {
     position: relative;
-    padding: 2rem;
-    min-height: 500px; /* Garantiza que las secciones sean lo suficientemente altas */
-    background-color: #EAEAEA;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
-/* Sección 1 */
-.section1 {
-    background-color: #F9E79F; /* Amarillo suave */
-}
-
-.section2 {
-    background-color: #D5DBDB; /* Gris suave */
-}
-
-.section3 {
-    background-color: #A3E4D7; /* Verde menta claro */
-}
-
-.section4 {
-    background-color: #FAD7A0; /* Naranja claro */
-}
-
-/* Imágenes de fondo */
-.section1::before, .section2::before, .section3::before, .section4::before {
+.section1::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url("../img/aprender-html.png");
     background-size: cover;
     background-position: center;
     opacity: 0.5;
+    /* Ajusta el valor de opacidad según tus necesidades */
     z-index: -1;
-}
-
-/* Imágenes específicas de cada sección */
-.section1::before {
-    background-image: url("../img/aprender-html.png");
+    /* Coloca la imagen detrás del contenido */
 }
 
 .section2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("../img/aprende-css.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    /* Ajusta el valor de opacidad según tus necesidades */
+    z-index: -1;
+    /* Coloca la imagen detrás del contenido */
 }
 
 .section3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("../img/Aprende-js.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    /* Ajusta el valor de opacidad según tus necesidades */
+    z-index: -1;
+    /* Coloca la imagen detrás del contenido */
 }
 
 .section4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("../img/APRENDE-PHP.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    /* Ajusta el valor de opacidad según tus necesidades */
+    z-index: -1;
+    /* Coloca la imagen detrás del contenido */
 }
 
-/* Estilo para los encabezados h3 dentro de cada sección */
+/* Estilo para h3 dentro de .section1 */
 .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
-    font-size: 60px;
-    color: #2C3E50; /* Azul oscuro */
+    font-size: 100px;
     position: relative;
     z-index: 2;
-    text-align: center;
-    margin-bottom: 20px;
-    transition: color 0.3s ease-in-out;
+    /* Asegurarse de que el texto se muestre sobre el fondo */
 }
 
-/* Estilo para los párrafos */
 section p {
     display: none;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 1rem;
-    background-color: rgba(44, 62, 80, 0.7); /* Fondo oscuro semitransparente */
-    padding: 10px;
-    border-radius: 5px;
-    animation: fadeIn 0.5s ease-in-out;
+    width: 60%;
 }
 
-/* Mostrar el párrafo cuando se pasa el ratón sobre el encabezado (h3) */
-section h3:hover + p {
+section h3:hover+p {
     display: block;
+    font-size: 30px;
+    position: relative;
+    z-index: 2;
+    background-color: white;
 }
 
-/* Animación para el párrafo */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Estilos para el pie de página */
-footer {
-    background-color: #2C3E50; /* Azul oscuro */
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 16px;
-}
-
-footer a {
-    color: #E74C3C; /* Rojo brillante */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Media queries para pantallas grandes (tabletas o computadoras de escritorio) */
-@media (max-width: 1024px) {
-    header {
-        justify-content: space-between;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav ul li {
-        font-size: 16px;
-        margin-left: 15px;
-    }
-
-    /* Ajustar el tamaño de los encabezados en pantallas medianas */
-    .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
-        font-size: 50px;
-    }
-
-    /* Ajustar el tamaño de los párrafos */
-    section p {
-        font-size: 16px;
-    }
-}
-
-/* Media queries para pantallas pequeñas (móviles) */
+/* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
+    header h1 {
+        display: none;
+    }
+
     header {
-        height: 80px;
-        flex-direction: column; /* Cambiar la disposición en pantallas pequeñas */
-        justify-content: center;
+        justify-content: space-around;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
     }
 
-    nav ul li {
-        margin-bottom: 10px;
-        font-size: 16px;
-    }
-
-    /* Reducir el tamaño del texto de los encabezados */
     .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
         font-size: 40px;
+        position: relative;
+        z-index: 2;
+        /* Asegurarse de que el texto se muestre sobre el fondo */
     }
 
-    /* Ajustar el tamaño de los párrafos */
-    section p {
-        font-size: 14px;
-    }
-
-    /* Mejorar la visibilidad en dispositivos móviles */
-    .section1, .section2, .section3, .section4 {
-        padding: 1rem;
-    }
 }
