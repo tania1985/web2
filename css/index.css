@@ -37,7 +37,10 @@ nav ul li a {
 
 }
 
-.section1, .section2, .section3, .section4 {
+.seccion1,
+.seccion2,
+.seccion3,
+.seccion4 {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -45,7 +48,7 @@ nav ul li a {
     flex-direction: column;
 }
 
-.section1::before {
+.seccion1::before {
     content: "";
     position: absolute;
     top: 0;
@@ -61,7 +64,7 @@ nav ul li a {
     /* Coloca la imagen detrás del contenido */
 }
 
-.section2::before {
+.seccion2::before {
     content: "";
     position: absolute;
     top: 0;
@@ -77,7 +80,7 @@ nav ul li a {
     /* Coloca la imagen detrás del contenido */
 }
 
-.section3::before {
+.seccion3::before {
     content: "";
     position: absolute;
     top: 0;
@@ -93,7 +96,7 @@ nav ul li a {
     /* Coloca la imagen detrás del contenido */
 }
 
-.section4::before {
+.seccion4::before {
     content: "";
     position: absolute;
     top: 0;
@@ -110,7 +113,10 @@ nav ul li a {
 }
 
 /* Estilo para h3 dentro de .section1 */
-.section1 h3, .section2 h3, .section3 h3, .section4 h3 {
+.seccion1 h3,
+.seccion2 h3,
+.seccion3 h3,
+.seccion4 h3 {
     font-size: 100px;
     position: relative;
     z-index: 2;
@@ -130,6 +136,9 @@ section h3:hover+p {
     background-color: white;
 }
 
+
+
+
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     header h1 {
@@ -144,7 +153,10 @@ section h3:hover+p {
         justify-content: center;
     }
 
-    .section1 h3, .section2 h3, .section3 h3, .section4 h3 {
+    .seccion1 h3,
+    .seccion2 h3,
+    .seccion3 h3,
+    .seccion4 h3 {
         font-size: 40px;
         position: relative;
         z-index: 2;
