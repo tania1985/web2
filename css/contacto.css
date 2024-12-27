@@ -27,33 +27,19 @@ body {
 }
 
 /* Estilo del título */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Etiquetas */
 label {
     display: block;
     margin-bottom: 10px;
     font-size: 16px;
 }
 
+/* Inputs y textarea */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -62,9 +48,16 @@ input, textarea {
     border-radius: 4px;
 }
 
+/* Contenedor para checkbox y botón en la misma línea */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px; /* Agrega un pequeño margen superior */
+}
+
+/* Estilo del botón */
 button {
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -73,6 +66,7 @@ button {
     cursor: pointer;
     opacity: 0.5;
     pointer-events: none;
+    margin-left: 10px; /* Separación entre el checkbox y el botón */
 }
 
 button.enabled {
@@ -80,10 +74,12 @@ button.enabled {
     pointer-events: all;
 }
 
-.checkbox-label {
+/* Estilo del checkbox */
+.checkbox-container label {
     font-size: 14px;
+    margin-right: 10px; /* Separación entre el checkbox y el texto */
 }
 
-.checkbox-label input {
-    margin-right: 10px;
+.checkbox-container input {
+    margin-right: 10px; /* Separación entre el checkbox y el texto */
 }
