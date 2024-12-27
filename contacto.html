@@ -9,27 +9,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Formulario de Contacto</h1>
-        <form id="contact-form" action="/enviar" method="POST">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+    
+            <div class="checkbox-label">
+                <input type="checkbox" id="authorization" name="authorization">
+                <label for="authorization">Autorizo el uso de mis datos personales</label>
             </div>
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" pattern="\d{3}\d{3}\d{3}" placeholder="123-456-789" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" id="submit" value="Enviar" disabled>
-            </div>
+    
+            <button type="submit" id="submitButton" class="disabled">Enviar</button>
         </form>
     </div>
 </body>
