@@ -80,7 +80,8 @@ footer p {
     }
     .asideMovil ul {
         display: none;
-        list-style: none
+        list-style: none;
+        padding-left: 0;
     }
     .asideMovil ul li {
         border-bottom: 2px solid blue;
