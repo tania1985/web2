@@ -7,3 +7,12 @@ user.onclick=function(){
         menuUser.style.display="block";
     }
 };
+var menuMovil=document.getElementById("menuMovil");
+menuMovil.onclick=function(){
+    var menu=document.getElementById("menu");
+    if(menu.style.display=="block"){
+        menu.style.display="none";
+    }else{
+        menu.style.display="block";
+    }
+};

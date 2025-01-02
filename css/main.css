@@ -78,4 +78,21 @@ footer p {
     main {
         flex-direction: column;
     }
+    .asideMovil ul {
+        display: none;
+        list-style: none
+    }
+    .asideMovil ul li {
+        border-bottom: 2px solid blue;
+    }
+    .asideMovil i {
+        font-size: 30px;
+        margin: 10px;
+        margin-left: 20px;
+    }
+    
+    * {
+        border: none;
+    }
+    
 }
