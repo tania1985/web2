@@ -26,6 +26,22 @@ header>div {
     align-items: center;
 }
 
+aside {
+    width: 30%;;
+}
+
+.asideMovil {
+    display: none;
+}
+
+.contenedorPrincipal {
+    width: 70%;
+}
+
+main {
+    display: flex;
+}
+
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     .menuUser li {
