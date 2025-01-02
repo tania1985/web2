@@ -52,14 +52,30 @@ aside ul {
     list-style: none;
 }
 
-aside i{
+aside i {
     margin-right: 20px;
     width: 30px;
+}
+
+footer p {
+    margin: 0%;
 }
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     .menuUser li {
         margin-top: 20px;
+    }
+    aside {
+        display: none;
+    }
+    .contenedorPrincipal {
+        width: 100%;
+    }
+    .asideMovil {
+        display: block;
+    }
+    main {
+        flex-direction: column;
     }
 }
