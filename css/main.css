@@ -114,6 +114,77 @@ td i:hover {
     color: #4CAF50;
 }
 
+/* Estilo para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px; /* Limita el tamaño del formulario */
+    margin: 20px auto; /* Centra el formulario */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los labels del formulario */
+form label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para los inputs del formulario */
+form input[type="date"],
+form input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+    transition: border-color 0.3s ease-in-out;
+}
+
+/* Estilo para los inputs cuando están enfocados */
+form input[type="date"]:focus,
+form input[type="text"]:focus {
+    border-color: #4CAF50; /* Cambio de color al enfocar */
+    outline: none;
+}
+
+/* Estilo para el botón de envío */
+form button {
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+form button:hover {
+    background-color: #45a049; /* Un verde más oscuro */
+}
+
+/* Estilo para el botón al deshabilitarlo */
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilo de texto para los inputs si es necesario (errores, etc.) */
+form .error {
+    color: red;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
 
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
@@ -166,4 +237,31 @@ td i:hover {
     td i {
         font-size: 20px;
     }
+    form {
+        max-width: 100%; /* El formulario ocupa todo el ancho disponible en pantallas pequeñas */
+        padding: 15px; /* Menos espacio alrededor */
+    }
+
+    form label {
+        font-size: 14px; /* Etiquetas más pequeñas */
+        margin-bottom: 6px;
+    }
+
+    form input[type="date"],
+    form input[type="text"] {
+        padding: 10px; /* Menos espacio dentro de los campos */
+        font-size: 14px; /* Tamaño de texto más pequeño */
+        margin-bottom: 15px;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 14px; /* Botón más pequeño */
+    }
+
+    /* Aseguramos que los botones no se vean desordenados */
+    form button:hover {
+        background-color: #45a049; /* Mismo efecto de hover */
+    }
+}
 }
