@@ -36,39 +36,29 @@ for (let index = 0; index < papeleras.length; index++) {
     };
 }
 
-// Establecer la fecha de hoy en el campo de fecha
-window.onload = function() {
-    var fechaHoy = new Date().toISOString().split('T')[0]; // Obtener la fecha en formato YYYY-MM-DD
-    document.getElementById('fecha').value = fechaHoy; // Asignar la fecha al campo de fecha
-};
+document.getElementById("fecha").value=new Date().toISOString().substring(0,10)
 
-var formulario = document.getElementById('formIncidencias');
-formulario.onsubmit = function(e) {
-    e.preventDefault(); // Evitar que el formulario se envíe
-    var incidencia =document.getElementById('descripcion').value;
-    var fecha =document.getElementById('fecha').value;
-    var tabla =document.getElementById('tablaIncidencias');
+document.getElementById('formIncidencias').onsubmit = function(e) {
+    e.preventDefault(); // Evitar el envío del formulario
+
+    // Obtener los valores de los campos
+    var incidencia = document.getElementById('descripcion').value;
+    var fechaInput = document.getElementById('fecha').value;
+
+    // Formatear la fecha al formato dd/mm/yyyy
+    var fechas = new Date(fechaInput);
+    var fechaFormateada = `${String(fechas.getDate()).padStart(2, '0')}/${String(fechas.getMonth() + 1).padStart(2, '0')}/${fechas.getFullYear()}`;
+
+    // Crear y añadir la nueva fila a la tabla
     var tr = document.createElement('tr');
-    var tr=document.createElement('tr');
-    var td1=document.createElement('td');
-    var td2=document.createElement('td');
-    var td3=document.createElement('td');
-    var td4=document.createElement('td');
-    var i=document.createElement('i');
-    i.classList.add('fa-solid');
-    i.classList.add('fa-trash');
-    i.onclick=function(e){
-        var row=this.closest('tr');
-        row.remove();
-    };
-    td1.innerHTML=99;
-    td2.innerHTML=fecha;
-    td3.innerHTML=incidencia;
-    td4.appendChild(i);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    tabla.appendChild(tr);
-    formulario.reset();
+    tr.innerHTML = `
+        <td>${document.getElementById('tablaIncidencias').rows.length}</td>
+        <td>${fechaFormateada}</td>
+        <td>${incidencia}</td>
+        <td><i class="fa-solid fa-trash" onclick="this.closest('tr').remove()"></i></td>
+    `;
+    document.getElementById('tablaIncidencias').appendChild(tr);
+
+    // Limpiar el formulario
+    this.reset();
 };
