@@ -1,64 +1,94 @@
-var user=document.getElementById("imgUser");
-user.onclick=function(){
-    var menuUser=document.getElementById("menuUser");
-    if(menuUser.style.display=="block"){
-        menuUser.style.display="none";
-    }else{
-        menuUser.style.display="block";
-    }
+document.getElementById("imgUser").onclick = function() {
+    var menuUser = document.getElementById("menuUser");
+    menuUser.style.display = menuUser.style.display === "block" ? "none" : "block";
 };
 
-var menuMovil=document.getElementById("menuMovil");
-menuMovil.onclick=function(){
-    var menu=document.getElementById("menu");
-    if(menu.style.display=="block"){
-        menu.style.display="none";
-    }else{
-        menu.style.display="block";
-    }
+document.getElementById("menuMovil").onclick = function() {
+    var menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
 };
 
 var papeleras = document.getElementsByClassName("fa-trash");
-for (let index = 0; index < papeleras.length; index++) {
-    const element = papeleras[index];
-    element.onclick = function (e) {
-        // Encuentra la fila más cercana al ícono de la papelera
-        const row = e.target.closest('tr');
-        
-        // Muestra una alerta con el Id de la fila antes de eliminarla
-        const id = row.firstElementChild.innerHTML;
-        const confirmDelete = confirm("¿Estás seguro de que quieres borrar la incidencia con ID: " + id + "?");
-
-        // Si el usuario confirma, elimina la fila
+for (let i = 0; i < papeleras.length; i++) {
+    papeleras[i].onclick = function(e) {
+        var row = e.target.closest('tr');
+        const id = row.firstElementChild.innerText;
+        const confirmDelete = confirm("¿Estás seguro de que deseas eliminar la incidencia con ID: " + id + "?");
         if (confirmDelete) {
             row.remove();
+            actualizarIds(); // Reorganizar los IDs después de eliminar una fila
+            actualizarFechaHoy(); // Actualizar la fecha con la fecha de hoy
         }
     };
 }
 
-document.getElementById("fecha").value=new Date().toISOString().substring(0,10)
+// Establecer la fecha actual en el input de fecha
+document.getElementById("fecha").value = new Date().toISOString().substring(0, 10);
 
+// Función para obtener el siguiente ID disponible
+function obtenerNuevoId() {
+    const tabla = document.getElementById('tablaIncidencias');
+    const filas = tabla.getElementsByTagName('tr');
+    let ultimoId = 0;
+
+    for (let i = 0; i < filas.length; i++) {
+        const id = filas[i].cells[0]?.innerText;
+        if (id && !isNaN(id)) {
+            ultimoId = Math.max(ultimoId, parseInt(id));
+        }
+    }
+
+    return ultimoId + 1;
+}
+
+// Función para actualizar los IDs después de eliminar una fila
+function actualizarIds() {
+    const tabla = document.getElementById('tablaIncidencias');
+    const filas = tabla.getElementsByTagName('tr');
+    let id = 1;
+
+    for (let i = 0; i < filas.length; i++) {
+        const fila = filas[i];
+        // Saltar el encabezado de la tabla
+        if (i === 0) continue;
+
+        // Reasignar los ID
+        fila.cells[0].innerText = id;
+        id++;
+    }
+}
+
+// Función para actualizar el campo de fecha con la fecha de hoy
+function actualizarFechaHoy() {
+    const fechaHoy = new Date().toISOString().substring(0, 10); // Formato yyyy-mm-dd
+    document.getElementById("fecha").value = fechaHoy;
+}
+
+// Manejar el envío del formulario
 document.getElementById('formIncidencias').onsubmit = function(e) {
-    e.preventDefault(); // Evitar el envío del formulario
+    e.preventDefault(); // Prevenir el envío del formulario
 
-    // Obtener los valores de los campos
+    // Obtener los valores del formulario
     var incidencia = document.getElementById('descripcion').value;
     var fechaInput = document.getElementById('fecha').value;
 
     // Formatear la fecha al formato dd/mm/yyyy
-    var fechas = new Date(fechaInput);
-    var fechaFormateada = `${String(fechas.getDate()).padStart(2, '0')}/${String(fechas.getMonth() + 1).padStart(2, '0')}/${fechas.getFullYear()}`;
+    var fecha = new Date(fechaInput);
+    var fechaFormateada = `${String(fecha.getDate()).padStart(2, '0')}/${String(fecha.getMonth() + 1).padStart(2, '0')}/${fecha.getFullYear()}`;
 
-    // Crear y añadir la nueva fila a la tabla
+    // Obtener el siguiente ID
+    var nuevoId = obtenerNuevoId();
+
+    // Crear nueva fila en la tabla
     var tr = document.createElement('tr');
     tr.innerHTML = `
-        <td>${document.getElementById('tablaIncidencias').rows.length}</td>
+        <td>${nuevoId}</td>
         <td>${fechaFormateada}</td>
         <td>${incidencia}</td>
-        <td><i class="fa-solid fa-trash" onclick="this.closest('tr').remove()"></i></td>
+        <td><i class="fa-solid fa-trash" onclick="this.closest('tr').remove(); actualizarIds(); actualizarFechaHoy();"></i></td>
     `;
     document.getElementById('tablaIncidencias').appendChild(tr);
 
-    // Limpiar el formulario
-    this.reset();
+    // Limpiar solo la descripción
+    document.getElementById('descripcion').value = "";
 };
