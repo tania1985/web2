@@ -35,3 +35,9 @@ for (let index = 0; index < papeleras.length; index++) {
         }
     };
 }
+
+// Establecer la fecha de hoy en el campo de fecha
+window.onload = function() {
+    var fechaHoy = new Date().toISOString().split('T')[0]; // Obtener la fecha en formato YYYY-MM-DD
+    document.getElementById('fecha').value = fechaHoy; // Asignar la fecha al campo de fecha
+};
