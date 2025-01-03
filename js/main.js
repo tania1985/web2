@@ -18,8 +18,20 @@ menuMovil.onclick=function(){
     }
 };
 
-var papeleras=document.getElementsByClassName("fa-trash");
+var papeleras = document.getElementsByClassName("fa-trash");
 for (let index = 0; index < papeleras.length; index++) {
     const element = papeleras[index];
-    element.onclick=function(){alert("borrando")};   
+    element.onclick = function (e) {
+        // Encuentra la fila más cercana al ícono de la papelera
+        const row = e.target.closest('tr');
+        
+        // Muestra una alerta con el Id de la fila antes de eliminarla
+        const id = row.firstElementChild.innerHTML;
+        const confirmDelete = confirm("¿Estás seguro de que quieres borrar la incidencia con ID: " + id + "?");
+
+        // Si el usuario confirma, elimina la fila
+        if (confirmDelete) {
+            row.remove();
+        }
+    };
 }
