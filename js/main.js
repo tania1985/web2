@@ -7,6 +7,7 @@ user.onclick=function(){
         menuUser.style.display="block";
     }
 };
+
 var menuMovil=document.getElementById("menuMovil");
 menuMovil.onclick=function(){
     var menu=document.getElementById("menu");
@@ -16,3 +17,9 @@ menuMovil.onclick=function(){
         menu.style.display="block";
     }
 };
+
+var papeleras=document.getElementsByClassName("fa-trash");
+for (let index = 0; index < papeleras.length; index++) {
+    const element = papeleras[index];
+    element.onclick=function(){alert("borrando")};   
+}
