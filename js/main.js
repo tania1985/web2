@@ -1,27 +1,32 @@
-document.getElementById("imgUser").onclick = function() {
-    var menuUser = document.getElementById("menuUser");
-    menuUser.style.display = menuUser.style.display === "block" ? "none" : "block";
+var user=document.getElementById("imgUser");
+user.onclick=function(){
+    var menuUser=document.getElementById("menuUser");
+    if(menuUser.style.display=="block"){
+        menuUser.style.display="none";
+    }else{
+        menuUser.style.display="block";
+    }
+};
+var menuMovil=document.getElementById("menuMovil");
+menuMovil.onclick=function(){
+    var menu=document.getElementById("menu");
+    if(menu.style.display=="block"){
+        menu.style.display="none";
+    }else{
+        menu.style.display="block";
+    }
 };
 
-document.getElementById("menuMovil").onclick = function() {
-    var menu = document.getElementById("menu");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-};
-
-var papeleras = document.getElementsByClassName("fa-trash");
-for (let i = 0; i < papeleras.length; i++) {
-    papeleras[i].onclick = function(e) {
-        var row = e.target.closest('tr');
-        const id = row.firstElementChild.innerText;
-        const confirmDelete = confirm("¿Estás seguro de que deseas eliminar la incidencia con ID: " + id + "?");
-        if (confirmDelete) {
-            row.remove();
-            actualizarIds(); // Reorganizar los IDs después de eliminar una fila
-            actualizarFechaHoy(); // Actualizar la fecha con la fecha de hoy
-        }
-    };
+var papeleras=document.getElementsByClassName("fa-trash");
+for (let index = 0; index < papeleras.length; index++) {
+    const element = papeleras[index];
+    element.onclick=function(e){
+        var row=this.closest("tr");
+        row.remove();
+        //e.target.parentElement.parentElement.remove();
+        //alert("borrando "+e.target.parentElement.parentElement.firstElementChild.innerText)
+    };   
 }
-
 // Establecer la fecha actual en el input de fecha
 document.getElementById("fecha").value = new Date().toISOString().substring(0, 10);
 
