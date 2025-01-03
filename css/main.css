@@ -186,6 +186,29 @@ form .error {
     margin-bottom: 15px;
 }
 
+.lista {
+    max-height: 400px;  /* Altura máxima para el contenedor de la tabla */
+    overflow-y: auto;   /* Agrega barra de desplazamiento vertical cuando sea necesario */
+    margin-top: 20px;
+    border: 1px solid #ddd;  /* Añadir borde al contenedor para hacer visible el área de scroll */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
 /* Media Queries para dispositivos pequeños */
 @media (max-width: 768px) {
     .menuUser li {
