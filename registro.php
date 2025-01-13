@@ -20,7 +20,7 @@ if(isset($_POST{"name"})){
             <!-- Nombre y Apellidos -->
             <div class="form-group">
                 <label for="name">Nombre y Apellidos:</label>
-                <input type="text" id="name" name="name" required placeholder="Tu nombre y apellidos">
+                <input type="text" id="name" name="Nombre" required placeholder="Tu nombre y apellidos">
             </div>
 
             <!-- Email -->
