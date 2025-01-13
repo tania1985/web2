@@ -1,3 +1,9 @@
+<?php
+if(isset($_POST{"name"})){
+    var_dump($_POST);
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +16,7 @@
 <div class="container">
         <h2>Crear Cuenta</h2>
         <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
-        <form action="#" method="POST" class="form-register">
+        <form action="procesararchivo.php" method="POST" class="form-register">
             <!-- Nombre y Apellidos -->
             <div class="form-group">
                 <label for="name">Nombre y Apellidos:</label>
