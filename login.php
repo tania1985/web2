@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST["email"])) {
     include("conexiondb.php");
     $email = $_POST["email"];

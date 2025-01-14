@@ -22,7 +22,7 @@ if(! isset($_SESSION["usuario"])){
             <div class="menuUser" id="menuUser">
                 <ul>
                     <li><a href="">Datos de usuario </a></li>
-                    <li><a href="login.php">Cerrar Sesión </a></li>
+                    <li><a href="cerrar_sesion.php">Cerrar Sesión </a></li>
                 </ul>
             </div>
         </div>
