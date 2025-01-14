@@ -72,7 +72,7 @@ if(isset($_POST{"nombre"})){
                 <button id="btnCrear"disabled>Registrarse</button>
             </div>
         </form>
-        <p class="login-link">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+        <p class="login-link">¿Ya tienes una cuenta? <a href="login.php">Iniciar sesión</a></p>
     </div>
     <script src="js/registro.js"></script>
 </body>
