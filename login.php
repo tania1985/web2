@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +13,7 @@
 <body>
     <div>
         <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
-        <form action="" method="get" id="formulario">
+        <form action="" method="post" id="formulario">
             <label for="usuario">Usuario</label>
             <input type="text" name="" id="usuario"> 
             <label for="password">Password</label>

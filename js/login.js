@@ -1,3 +1,4 @@
+/*
 var formulario = document.getElementById("formulario");
 formulario.onsubmit =  function(e){
     e.preventDefault();
@@ -9,3 +10,4 @@ formulario.onsubmit =  function(e){
         alert("Usuario o contraseña incorrectos");
     }
 }
+    */

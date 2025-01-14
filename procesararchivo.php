@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql="INSERT INTO usuarios (Nombre, Email, fecha, Password)
- VALUES ('".$_POST["Nombre"]."','".$_POST["email"]."','".$_POST["dob"]."','".$_POST["password"]."')";
+$sql="INSERT INTO usuarios (nombre, email, fecha, password)
+ VALUES ('".$_POST["nombre"]."','".$_POST["email"]."','".$_POST["fecha"]."','".$_POST["password"]."')";
 
 if (mysqli_query($conn, $sql)) {
     echo "Nuevo registro creado";

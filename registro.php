@@ -1,7 +1,27 @@
 <?php
-if(isset($_POST{"name"})){
-    var_dump($_POST);
-    exit();
+if(isset($_POST{"nombre"})){
+    include("conexiondb.php");
+    try {
+        //Preparar y ejecutar la consulta SQL
+        $sql = "INSERT INTO usuarios (nombre, email, fecha, password) VALUES (:nombre, :email, :fecha, :password)";
+        $snt = $conexion->prepare($sql);
+        $snt->bindParam(":nombre", $_POST["nombre"]);
+        $snt->bindParam(":email", $_POST["email"]);
+        $snt->bindParam(":fecha", $_POST["fecha"]);
+        $snt->bindParam(":password", $_POST["password"]);
+        // encripta la contraseña antes de guardarla
+        $hashed_password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $snt->bindParam(":password", $hashed_password);
+        // $snt->bindParam(":Password", $_POST["password"]);
+        $snt->execute();
+
+        echo "Registro creado exitosamente";
+
+        // Redirigir a la página de inicio de sesión
+        header("Location: login.html");
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -16,11 +36,11 @@ if(isset($_POST{"name"})){
 <div class="container">
         <h2>Crear Cuenta</h2>
         <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
-        <form action="procesararchivo.php" method="POST" class="form-register">
+        <form action="" method="POST" class="form-register">
             <!-- Nombre y Apellidos -->
             <div class="form-group">
                 <label for="name">Nombre y Apellidos:</label>
-                <input type="text" id="name" name="Nombre" required placeholder="Tu nombre y apellidos">
+                <input type="text" id="name" name="nombre" required placeholder="Tu nombre y apellidos">
             </div>
 
             <!-- Email -->
@@ -32,7 +52,7 @@ if(isset($_POST{"name"})){
             <!-- Fecha de Nacimiento -->
             <div class="form-group">
                 <label for="dob">Fecha de Nacimiento:</label>
-                <input type="date" id="dob" name="dob" required>
+                <input type="date" id="fecha" name="fecha" required>
             </div>
 
             <!-- Contraseña -->
