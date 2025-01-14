@@ -18,7 +18,7 @@ if(isset($_POST{"nombre"})){
         echo "Registro creado exitosamente";
 
         // Redirigir a la página de inicio de sesión
-        header("Location: login.html");
+        header("Location: login.php");
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

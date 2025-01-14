@@ -1,11 +1,12 @@
 <?php
+
 if (isset($_POST["email"])) {
     include("conexiondb.php");
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     // Preparar y ejecutar la consulta para obtener el hash de la contraseña almacenada
-    $sql = "SELECT password FROM usuarios WHERE email = :email";
+    $sql = "SELECT password,id,nombre,fecha FROM usuarios WHERE email = :email";
     $stmt = $conexion->prepare($sql);
     $stmt->bindParam(':email', $email);
     $stmt->execute();
@@ -13,9 +14,14 @@ if (isset($_POST["email"])) {
 
     if ($result && password_verify($password, $result['password'])) {
         // Redirigir a la página de inicio o dashboard
-    header("Location: main.php");
+        session_start();
+        $_SESSION['usuario'] = $email;
+        $_SESSION['idusuario'] = $result['id'];
+        $_SESSION['nombre'] = $result['nombre'];
+        $_SESSION['fecha'] = $result['fecha'];
+        header("Location: main.php");
     } else {
-        echo "Email o contraseña incorrectos";
+        $error= "Email o contraseña incorrectos";
     }
 
     // Cerrar la conexión
