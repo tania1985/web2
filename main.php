@@ -71,7 +71,7 @@ session_start();
                         <td>".$row['fecha']."</td>
                         <td>".$row['descripcion']."</td>
                         <td>
-                            <i class='fa-solid fa-trash'></i>
+                            <a href='borrar_incidencia.php?incidencia=".$row['id']."'><i class='fa-solid fa-trash'></i></a>
                             <i class='fa-solid fa-pen-to-square'></i>
                         </tr>";    
                     }
