@@ -25,7 +25,7 @@ if($foto == ""){
             <div class="menuUser" id="menuUser">
                 <ul>
                     <li><a href="datos_usuario.php">Datos de usuario</a></li>
-                    <li><a href="cerrar_session.php">Cerrar sesión</a></li>
+                    <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
                 </ul>
             </div>
         </div>
