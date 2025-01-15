@@ -1,5 +1,8 @@
 <?php
-
+$foto  = $_SESSION["foto"];
+if($foto == ""){
+    $foto = "img/usuario.jpg";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +21,7 @@
     <header>
         <img src="img/logo.png" alt="">
         <div>
-            <img id="imgUser" class="imgUser" src="img/usuario.jpg" alt="" srcset="">
+            <img id="imgUser" class="imgUser" src="<?php echo $foto; ?>" alt="" srcset="">
             <div class="menuUser" id="menuUser">
                 <ul>
                     <li><a href="datos_usuario.php">Datos de usuario</a></li>
