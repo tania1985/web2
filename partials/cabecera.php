@@ -21,7 +21,7 @@
             <img id="imgUser" class="imgUser" src="img/usuario.jpg" alt="" srcset="">
             <div class="menuUser" id="menuUser">
                 <ul>
-                    <li><a href="">Datos de usuario</a></li>
+                    <li><a href="datos_usuario.php">Datos de usuario</a></li>
                     <li><a href="cerrar_session.php">Cerrar sesión</a></li>
                 </ul>
             </div>
