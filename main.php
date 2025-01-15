@@ -1,8 +1,12 @@
 <?php
 session_start();
-if(! isset($_SESSION["usuario"])){
-    header("Location: login.php");
+    if(! isset($_SESSION["usuario"])){
+        header("Location: login.php");
 }
+    include("conexiondb.php");
+        $sql = "select * from incidencias";
+        $result = $conexion->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +54,7 @@ if(! isset($_SESSION["usuario"])){
         <section class="contenedorPrincipal">
             <h3> Listado Incidencias </h3>
             <div class="incidencias">
-                <form action="" id="formIncidencias">
+                <form action="nueva_incidencia.php" method="post" id="formIncidencias">
                     <label for="fecha">Fecha</label>
                     <input type="date" name="fecha" id="fecha" required>
                     <label for="descripcion">Descripción</label>
@@ -60,65 +64,30 @@ if(! isset($_SESSION["usuario"])){
             </div>
             <div class="lista">
                 <table id="tablaIncidencias">
+                    <?php
+                    while ($row = $result->fetch()) {
+                        echo "<tr>
+                        <td>".$row['id']."</td>
+                        <td>".$row['fecha']."</td>
+                        <td>".$row['descripcion']."</td>
+                        <td>
+                            <i class='fa-solid fa-trash'></i>
+                            <i class='fa-solid fa-pen-to-square'></i>
+                        </tr>";    
+                    }
+                    ?>
                     <thead>
                         <th>Id</th>
                         <th>Fecha</th>
                         <th>Descripción</th>
                         <th>Operaciones</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>01/01/2025</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>02/01/2025</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>03/01/2025</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>04/01/2025</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>05/01/2025</td>
-                            <td>Problema con el servidor</td>
-                            <td>
-                                <i class="fa-solid fa-trash"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </td>
-                        </tr>
-                    </tbody>
                 </table>
             </div>
         </section>
     </main>
     <footer>
-        <p>Web2 - 2025</p>
+        <p>© 2025 Todos los derechos reservados</p>
     </footer>
     <script src="js/main.js"></script>
 </body>

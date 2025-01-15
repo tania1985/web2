@@ -17,7 +17,7 @@ menuMovil.onclick=function(){
     }
 };
 
-var papeleras=document.getElementsByClassName("fa-trash");
+/* var papeleras=document.getElementsByClassName("fa-trash");
 for (let index = 0; index < papeleras.length; index++) {
     const element = papeleras[index];
     element.onclick=function(e){
@@ -97,3 +97,5 @@ document.getElementById('formIncidencias').onsubmit = function(e) {
     // Limpiar solo la descripción
     document.getElementById('descripcion').value = "";
 };
+*/
+
