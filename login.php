@@ -38,7 +38,7 @@ if (isset($_POST["email"])) {
 </head>
 <body>
     <div>
-        <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
         <form action="" method="post" id="formulario">
             <label for="usuario">Usuario</label>
             <input type="email" name="email" id="usuario" placeholder="Introduce tu email"> 

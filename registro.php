@@ -35,7 +35,7 @@ if(isset($_POST{"nombre"})){
 <body>
 <div class="container">
         <h2>Crear Cuenta</h2>
-        <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+        <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
         <form action="" method="POST" class="form-register">
             <!-- Nombre y Apellidos -->
             <div class="form-group">
